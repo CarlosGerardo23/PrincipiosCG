@@ -102,7 +102,18 @@ void Application::linea(int x1, int y1, int x2, int y2)
 	}*/
 	
 }
-
+void Application::clear_screen() 
+{
+	Color n(0, 0, 0,255);
+	for (int i = 0; i <= WIDTH; i++)
+	{
+		for (int j = 0; j <= HEIGHT; ++j)
+		{
+			putPixel(i, j, n);
+	   }
+	}
+	
+}
 void Application::moveto(int x, int y)
 {
 	gx = x;
@@ -111,6 +122,39 @@ void Application::moveto(int x, int y)
 void Application::lineto(int x1, int y1, int x2, int y2)
 {
 	linea(x1, y1, x2, y2);
+}
+void Application::create_poligon(int lados)
+{
+	int contador = 1;
+	int tx, ty;
+	int angulo = 360;
+	
+	angulo = angulo / lados;
+	for (int i = angulo; i <= 360; i += angulo)
+	{
+
+		int x = 300 * std::cos(i*pi / 180.0f);
+		int y = 300 * std::sin(i*pi / 180.0f);
+		if (contador == 1)
+		{
+			moveto(x + WIDTH / 2, y + HEIGHT / 2);
+			tx = x;
+			ty = y;
+		}
+		else if (contador == lados)
+		{
+			lineto(gx, gy, x + WIDTH / 2, y + HEIGHT / 2);
+			moveto(x + WIDTH / 2, y + HEIGHT / 2);
+			lineto(gx, gy, tx + WIDTH / 2, ty + HEIGHT / 2);
+		}
+		else
+		{
+			lineto(gx, gy, x + WIDTH / 2, y + HEIGHT / 2);
+			moveto(x + WIDTH / 2, y + HEIGHT / 2);
+		}
+		contador++;
+		
+	}
 }
 void Application::draw()
 {
@@ -122,36 +166,8 @@ void Application::draw()
 		int y = 300 * std::sin((angulo*pi / 180.0));
 		linea(WIDTH/2, HEIGHT/2, x+WIDTH / 2, y  + HEIGHT / 2);
 	}*/
-	int contador = 1;
-	int tx, ty;
-	int angulo=360, lados = 16;
-	Color a(0, 255, 0, 255);
-	angulo = angulo / lados;
-	for (int i = angulo; i <= 360; i += angulo)
-	{
-		
-		int x = 300 * std::cos(i*pi / 180.0f);
-		int y = 300 * std::sin(i*pi / 180.0f);
-		if (contador == 1)
-		{
-			moveto(x+WIDTH/2, y+HEIGHT/2);
-			tx = x;
-			ty = y;
-		}
-		else if (contador==lados) 
-		{
-			lineto(gx, gy, x + WIDTH / 2, y + HEIGHT / 2);
-			moveto(x + WIDTH / 2, y + HEIGHT / 2);
-			lineto(gx, gy, tx + WIDTH / 2, ty + HEIGHT / 2);
-		}
-		else
-		{
-			lineto(gx, gy, x + WIDTH / 2, y + HEIGHT / 2);
-		    moveto(x + WIDTH / 2, y + HEIGHT / 2);
-		}
-		contador++;
-		putPixel(x+WIDTH/2, y+HEIGHT/2, a);
-	}
+	create_poligon(4);
+	clear_screen();
 	
 }
 

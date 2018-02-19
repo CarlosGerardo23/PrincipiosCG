@@ -3,7 +3,10 @@ c:\users\carlo\desktop\mydir\mydir\principiosdecg\figuras\src\application.cpp(65
 c:\users\carlo\desktop\mydir\mydir\principiosdecg\figuras\src\application.cpp(66): warning C4309: 'argumento': truncamiento de valor constante
 c:\users\carlo\desktop\mydir\mydir\principiosdecg\figuras\src\application.cpp(67): warning C4309: 'argumento': truncamiento de valor constante
 c:\users\carlo\desktop\mydir\mydir\principiosdecg\figuras\src\application.cpp(68): warning C4309: 'argumento': truncamiento de valor constante
-c:\users\carlo\desktop\mydir\mydir\principiosdecg\figuras\src\application.cpp(128): warning C4309: 'argumento': truncamiento de valor constante
-c:\users\carlo\desktop\mydir\mydir\principiosdecg\figuras\src\application.cpp(133): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\carlo\desktop\mydir\mydir\principiosdecg\figuras\src\application.cpp(134): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\carlo\desktop\mydir\mydir\principiosdecg\figuras\src\application.cpp(107): warning C4309: 'argumento': truncamiento de valor constante
+c:\users\carlo\desktop\mydir\mydir\principiosdecg\figuras\src\application.cpp(136): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\carlo\desktop\mydir\mydir\principiosdecg\figuras\src\application.cpp(137): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+  Generando código...
+  Omitiendo... (no se detectaron cambios relevantes)
+  Pixel.cpp
   Figuras.vcxproj -> C:\Users\carlo\Desktop\myDir\myDir\PrincipiosDeCG\x64\Debug\Figuras.exe

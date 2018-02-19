@@ -17,6 +17,8 @@ public:
 	float pi= 3.1416f;
 	void moveto(int x, int y);
 	void lineto(int x1, int y1, int x2, int y2);
+	void create_poligon(int lados);
+	void clear_screen();
 	//void update() override;
 };
 
