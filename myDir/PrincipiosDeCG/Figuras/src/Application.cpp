@@ -119,41 +119,45 @@ void Application::moveto(int x, int y)
 	gx = x;
 	gy = y;
 }
-void Application::lineto(int x1, int y1, int x2, int y2)
+void Application::lineto(int x1, int y1)
 {
-	linea(x1, y1, x2, y2);
+	linea(gx, gy, x1, y1);
+	moveto(x1, y1);
 }
 void Application::create_poligon(int lados)
 {
 	int contador = 1;
 	int tx, ty;
 	int angulo = 360;
-	
+
 	angulo = angulo / lados;
 	for (int i = angulo; i <= 360; i += angulo)
 	{
 
 		int x = 300 * std::cos(i*pi / 180.0f);
 		int y = 300 * std::sin(i*pi / 180.0f);
-		if (contador == 1)
+		if (i == angulo)
 		{
 			moveto(x + WIDTH / 2, y + HEIGHT / 2);
 			tx = x;
 			ty = y;
+
 		}
-		else if (contador == lados)
+		else if (i == 360)
 		{
-			lineto(gx, gy, x + WIDTH / 2, y + HEIGHT / 2);
-			moveto(x + WIDTH / 2, y + HEIGHT / 2);
-			lineto(gx, gy, tx + WIDTH / 2, ty + HEIGHT / 2);
+
+			lineto(x + WIDTH / 2, y + HEIGHT / 2);
+
+			lineto(tx + WIDTH / 2, ty + HEIGHT / 2);
+
 		}
 		else
 		{
-			lineto(gx, gy, x + WIDTH / 2, y + HEIGHT / 2);
-			moveto(x + WIDTH / 2, y + HEIGHT / 2);
+			lineto(x + WIDTH / 2, y + HEIGHT / 2);
+
 		}
 		contador++;
-		
+
 	}
 }
 void Application::draw()
@@ -166,8 +170,8 @@ void Application::draw()
 		int y = 300 * std::sin((angulo*pi / 180.0));
 		linea(WIDTH/2, HEIGHT/2, x+WIDTH / 2, y  + HEIGHT / 2);
 	}*/
-	create_poligon(4);
-	clear_screen();
+	create_poligon(40);
+	/*clear_screen();*/
 	
 }
 
