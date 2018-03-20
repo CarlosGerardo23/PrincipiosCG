@@ -441,22 +441,22 @@ void Application::triangle_strip(std::vector<Vec4>v)
 			triangle(v[i + 3], v[i + 1], v[i + 2]);
 		}
 }
-void Application::circle(int x, int y, int R)
+void Application::circle(int c_x, int c_y, int R)
 {
 	Color a(200, 0, 180, 255);
-	x = 0;
-	y = R;
+	int x = 0;
+	int y = R;
 	float d= 1 - R;
 	while (x<y) {
-		putPixel(x + cx, y + cy,a);
-		putPixel(-x + cx, y + cy, a);
-		putPixel(-x + cx, -y + cy, a);
-		putPixel(x + cx, -y + cy,a);
-
-		putPixel(y + cx, -x + cy,a);
-		putPixel(-y + cx, -x + cy, a);
-		putPixel(-y + cx, x + cy,a);
-		putPixel(y + cx, x + cy, a);
+		putPixel( x + c_x, y + c_y,a);
+		putPixel(-x+ c_x, y + c_y, a);
+		putPixel(-x+ c_x, -y +c_y, a);
+		putPixel(x + c_x, -y +c_y,a);
+					  		   
+		putPixel(y + c_x, -x +c_y,a);
+		putPixel(-y +c_x, -x +c_y, a);
+		putPixel(-y +c_x, x + c_y, a);
+		putPixel(y + c_x, x + c_y, a);
 		if (d<0) {
 			d += 2*x + 3;
 		}
@@ -548,9 +548,29 @@ void Application::update()
 
 void Application::draw()
 {
-	
-	
-	circle(cx,cy, 300);
+
+	circle(cx + 50, +cy + 100, 100);
+	circle(cx, cy, 100);
+
+	circle(cx - 50, +cy + 10, 100);
+	circle(cx-300, cy+20, 100);
+
+	circle(cx + 100, +cy -100, 100);
+	circle(cx-60, cy+300, 100);
+
+	circle(cx + 59, +cy+400 + 100, 100);
+	circle(cx-200, cy+90, 100);
+
+	circle(cx + 50, +cy, 100);
+	circle(cx, cy-90, 100);
+
+	circle(cx , +cy + 100, 100);
+	circle(cx-100, cy, 100);
+
+	circle(cx -30, +cy + 180, 100);
+	circle(cx, cy-41, 100);
+	circle(cx + 350, +cy + 100, 100);
+
 	
 }
 
