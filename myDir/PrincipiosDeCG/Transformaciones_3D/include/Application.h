@@ -51,7 +51,7 @@ public:
 	void lines_loop(std::vector<Vec4>v);
 	void triangle_fan(std::vector<Vec4>v);
 	void triangle_strip(std::vector<Vec4>v);
-
+	void circle(int x, int y, int r);
 	void drawGeometry(std::vector<Vec4> vcopy, int metodo);
 };
 

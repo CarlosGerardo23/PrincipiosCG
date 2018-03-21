@@ -573,7 +573,7 @@ void Application::update()
 	Vec4 target(0, 0, 0);
 	Vec4 up(0, 1, 0);
 	float fov = 60;
-	Vec4 centro(WIDTH / 2, HEIGHT / 2, WIDTH/2);
+	Vec4 centro(WIDTH / 2, HEIGHT / 2, WIDTH / 2);
 
 
 	Mat4 rot = Mat4::rotate_x(ang);
@@ -581,15 +581,15 @@ void Application::update()
 	Mat4 tra = Mat4::translate(a);
 	Mat4 tra2 = Mat4::translate(b);
 	Mat4 acum = rot;
-	acum = rot2*acum;
+	acum = rot2 * acum;
 	acum = tra2 * acum;
 	Mat4 cam = Mat4::lookAt(eye, target, up);
-	Mat4 proy = Mat4::perspective(fov,WIDTH/HEIGHT,0.0001,20);
+	Mat4 proy = Mat4::perspective(fov, WIDTH / HEIGHT, 0.0001, 20);
 	Mat4 camara = proy * cam;
 	Mat4 acumf = camara * acum;
-	ang+=4;
-	ang2+= 2;
-	xcam+=0.999;
+	ang += 4;
+	ang2 += 2;
+	xcam += 0.999;
 	/*Vec4 t(-WIDTH / 2, -HEIGHT / 2, 0);
 	Vec4 t2(WIDTH / 2, HEIGHT / 2, 0);
 	Vec4 a(0, 0, 0);
